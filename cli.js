@@ -9,6 +9,8 @@ const Table = require('cli-table3');
 const grid = new Table();
 const ora = require('ora');
 const chalk = require('chalk');
+const boxen = require('boxen');
+const checkForUpdate = require('update-check');
 const pkg = require('./package.json');
 
 const conf = new Configstore(pkg.name, {
@@ -44,6 +46,7 @@ const cli = meow(
 		--delete   -d  Delete saved location
 
 		--settings -s  Show Settings JSON
+		--version  -v  Show version
 		--help     -h  Show help
 `,
 	{
@@ -55,8 +58,10 @@ const cli = meow(
 			get: { alias: 'g' },
 			delete: { alias: 'd' },
 			settings: { alias: 's' },
+			version: { alias: 'v' },
 			help: { alias: 'h' },
 		},
+		autoVersion: false,
 	}
 );
 
@@ -118,9 +123,47 @@ function checkInput() {
 		}
 
 		fecthWeather();
+	} else if (cli.flags.v) {
+		checkUpdates();
 	} else {
 		cli.showHelp();
 	}
+}
+
+/*  CHECK UPDATES */
+async function checkUpdates() {
+	let update = null;
+
+	try {
+		update = await checkForUpdate(pkg);
+	} catch (error) {
+		console.log(chalk.red('\nFailed to check for updates:'));
+		console.error(error);
+	}
+
+	let updateText;
+	let commandText;
+
+	if (update) {
+		updateText =
+			'Update available ' +
+			chalk.gray(pkg.version) +
+			' → ' +
+			chalk.green(update.latest);
+		commandText =
+			'Run ' + chalk.cyan('npm i -g ' + pkg.name) + ' to update';
+	} else {
+		updateText = 'You are using the latest version';
+		commandText = pkg.name + ' v' + pkg.version;
+	}
+
+	console.log(
+		boxen(updateText + '\n' + commandText, {
+			padding: 1,
+			margin: 1,
+			align: 'center',
+		})
+	);
 }
 
 /* SETTINGS */
