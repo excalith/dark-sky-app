@@ -332,7 +332,7 @@ function getDayName(time) {
 		return chalk.green.bold('Current');
 	}
 
-	if (cli.flags.d) {
+	if (cli.flags.t) {
 		return chalk.green.bold(
 			pad(d.getHours(), '0') + ':' + pad(d.getMinutes(), '0')
 		);
