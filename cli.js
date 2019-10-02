@@ -247,7 +247,7 @@ function writeWeather(response, cityName) {
 
 	if (cli.flags.c) {
 		pushData(response.currently, response.currently);
-	} else if (cli.flags.d) {
+	} else if (cli.flags.t) {
 		for (let index = 0; index < 25; index++) {
 			const day = response.hourly.data[index];
 			const previousDay =
