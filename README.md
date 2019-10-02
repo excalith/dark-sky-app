@@ -4,16 +4,41 @@
 <p align = "center">
     A simple CLI App to fetch weather data from DarkSky in a way you can easily read
 </p>
+<p align="center">
+    <img src="screenshot.gif">
+</p>
 
+<p align="center">
+	<a href="https://travis-ci.org/excalith/dark-sky-app">
+		<img alt="Master Status" height="18" src="https://img.shields.io/travis/excalith/dark-sky-app.svg?label=master">
+	</a>
+	<a href="https://travis-ci.org/excalith/dark-sky-app">
+		<img alt="Dev Status" height="18" src="https://img.shields.io/travis/excalith/dark-sky-app/develop.svg?label=dev">
+	</a>
+	<a href="https://www.npmjs.com/package/dark-sky-app">
+		<img alt="NPM Installs" height="18" src="https://img.shields.io/npm/dt/dark-sky-app.svg?label=installs">
+	</a>
+	<a href="https://github.com/excalith/dark-sky-app/issues">
+		<img alt="Issues" height="18" src="https://img.shields.io/github/issues/excalith/dark-sky-app.svg">
+	</a>
+	<a href="https://github.com/excalith/dark-sky-app/stargazers">
+		<img alt="Stars" height="18" src="https://img.shields.io/github/stars/excalith/dark-sky-app.svg">
+	</a>
+	<a href="https://github.com/excalith/dark-sky-app/network">
+		<img alt="Forks" height="18" src="https://img.shields.io/github/forks/excalith/dark-sky-app.svg">
+	</a>
+</p>
 <hr/>
 
 ## Features
 - You can get `current`, `today` and `weekly` weather data
 - You can easily `add`, `delete` and `switch` to any location
+- Colorized output for UV, Temperature, Pressure and Precipation types
+- Pressure levels compare previous levels and shows changes
 
 ## How To Install:
 ### Using NPM
-Will be ready on NPM soon
+`npm i -g dark-sky-app`
 
 ### Download
 - Download the [latest release](https://github.com/excalith/dark-sky/releases/latest)
