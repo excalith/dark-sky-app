@@ -15,7 +15,7 @@ const pkg = require('./package.json');
 
 const conf = new Configstore(pkg.name, {
 	apikey: '',
-	lang: 'tr',
+	lang: 'en',
 	units: 'si',
 	current: '',
 	cities: {},
