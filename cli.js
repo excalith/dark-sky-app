@@ -111,13 +111,15 @@ function checkInput() {
 	} else if (cli.flags.s) {
 		console.log('Opening settings file: ' + chalk.magenta.bold(conf.path));
 		opn(conf.path, { wait: false });
-	} else {
+	} else if (cli.flags.c || cli.flags.t || cli.flags.w) {
 		if (conf.get('current') === '') {
 			ora('Please select a location first').fail();
 			return;
 		}
 
 		fecthWeather();
+	} else {
+		cli.showHelp();
 	}
 }
 
