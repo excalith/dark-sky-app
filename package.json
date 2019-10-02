@@ -1,11 +1,12 @@
 {
   "name": "dark-sky",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Dark-Sky Cli App",
   "main": "./cli.js",
   "scripts": {
     "start": "node cli.js",
-    "test": "xo"
+    "test": "xo",
+    "reset": "rm -rf ./node_modules ./package-lock.json && npm install"
   },
   "author": "Can Cellek",
   "license": "MIT",
@@ -17,14 +18,14 @@
     "chalk": "^2.4.2",
     "cli-table3": "^0.5.1",
     "configstore": "^5.0.0",
-    "inquirer": "^6.3.1",
+    "inquirer": "^7.0.0",
     "meow": "^5.0.0",
     "opn": "^6.0.0",
-    "ora": "^3.4.0"
+    "ora": "^4.0.2"
   },
   "devDependencies": {
-    "husky": "^2.3.0",
-    "xo": "^0.24.0"
+    "husky": "^3.0.7",
+    "xo": "^0.25.3"
   },
   "husky": {
     "hooks": {
