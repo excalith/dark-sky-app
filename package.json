@@ -1,0 +1,38 @@
+{
+  "name": "dark-sky",
+  "version": "1.0.0",
+  "description": "Dark-Sky Cli App",
+  "main": "./cli.js",
+  "scripts": {
+    "start": "node cli.js",
+    "test": "xo"
+  },
+  "author": "Can Cellek",
+  "license": "MIT",
+  "bin": {
+    "ds": "./cli.js"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "chalk": "^2.4.2",
+    "cli-table3": "^0.5.1",
+    "configstore": "^5.0.0",
+    "inquirer": "^6.3.1",
+    "meow": "^5.0.0",
+    "opn": "^6.0.0",
+    "ora": "^3.4.0"
+  },
+  "devDependencies": {
+    "husky": "^2.3.0",
+    "xo": "^0.24.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test",
+      "pre-push": "npm test"
+    }
+  },
+  "xo": {
+    "prettier": true
+  }
+}
