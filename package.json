@@ -10,6 +10,18 @@
   },
   "author": "Can Cellek",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/excalith/dark-sky"
+  },
+  "keywords": [
+    "cli",
+    "app",
+    "weather",
+    "dark",
+    "sky",
+    "terminal"
+  ],
   "bin": {
     "ds": "./cli.js"
   },
